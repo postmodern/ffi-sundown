@@ -2,7 +2,7 @@ require 'ffi'
 
 module FFI
   module Upskirt
-    class Buf < FFI::Struct
+    class Buffer < FFI::Struct
 
       layout :data, :pointer,
              :size, :size_t,
