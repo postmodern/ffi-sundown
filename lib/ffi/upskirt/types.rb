@@ -20,6 +20,19 @@ module FFI
       :space_headers, (1 << 6)
     ]
 
+    enum :render_mode, [
+      :skip_html, (1 << 0),
+      :skip_style, (1 << 1),
+      :skip_images, (1 << 2),
+      :skip_links, (1 << 3),
+      :expand_tabs, (1 << 5),
+      :safelink, (1 << 7),
+      :toc, (1 << 8),
+      :hard_wrap, (1 << 9),
+      :github_blockcode, (1 << 10),
+      :use_xhtml, (1 << 11)
+    ]
+
     # block level callbacks - NULL skips the block
     callback :blockcode_callback, [:pointer, :pointer, :pointer, :pointer], :void
     callback :blockquote_callback, [:pointer, :pointer, :pointer], :void
