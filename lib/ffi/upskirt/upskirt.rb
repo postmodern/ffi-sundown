@@ -34,5 +34,10 @@ module FFI
 
     attach_function :is_safe_link, [:pointer, :size_t], :int
     attach_function :ups_markdown, [:pointer, :pointer, :pointer, :uint], :void
+
+    attach_function :upshtml_renderer, [:pointer, :uint], :void
+    attach_function :upshtml_toc_renderer, [:pointer], :void
+    attach_function :upshtml_free_renderer, [:pointer], :void
+    attach_function :upshtml_smartypants, [:pointer, :pointer], :void
   end
 end
