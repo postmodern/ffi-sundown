@@ -26,13 +26,11 @@ module FFI
     attach_function :bufslurp, [:pointer, :size_t], :void
     attach_function :buftoi, [:pointer, :size_t, :pointer], :int
 
-    MARKDOWN_LIST_ORDERED = 1
-    MARKDOWN_LI_BLOCK = 2
-    MARKDOWN_TABLE_ALIGN_L = (1 << 0)
-    MARKDOWN_TABLE_ALIGN_R = (1 << 1)
-    MARKDOWN_TABLE_ALIGN_CENTER = (
-      MARKDOWN_TABLE_ALIGN_L | MARKDOWN_TABLE_ALIGN_R
-    )
+    MKD_LIST_ORDERED = 1
+    MKD_LI_BLOCK = 2
+    MKD_TABLE_ALIGN_L = (1 << 0)
+    MKD_TABLE_ALIGN_R = (1 << 1)
+    MKD_TABLE_ALIGN_CENTER = (MKD_TABLE_ALIGN_L | MKD_TABLE_ALIGN_R)
 
     attach_function :is_safe_link, [:pointer, :size_t], :int
     attach_function :ups_markdown, [:pointer, :pointer, :pointer, :uint], :void
