@@ -1,0 +1,15 @@
+name: ffi-upskirt
+summary: FFI bindings for libupskirt
+description:
+  Ruby FFI bindings for the libupskirt markdown library.
+
+license: MIT
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: http://github.com/postmodern/ffi-upskirt
+has_yard: true
+
+development_dependencies:
+  ore-tasks: ~> 0.4
+  rspec: ~> 2.4
+  yard: ~> 0.6.0
