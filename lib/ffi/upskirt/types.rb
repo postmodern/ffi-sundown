@@ -59,11 +59,11 @@ module FFI
     callback :strikethrough_callback, [:pointer, :pointer, :pointer], :int
 
     # low level callbacks - NULL copies input directly into the output
-    callback :entity, [:pointer, :pointer, :pointer], :void
-    callback :normal_text, [:pointer, :pointer, :pointer], :void
+    callback :entity_callback, [:pointer, :pointer, :pointer], :void
+    callback :normal_text_callback, [:pointer, :pointer, :pointer], :void
 
     # header and footer
-    callback :doc_header, [:pointer, :pointer], :void
-    callback :doc_footer, [:pointer, :pointer], :void
+    callback :doc_header_callback, [:pointer, :pointer], :void
+    callback :doc_footer_callback, [:pointer, :pointer], :void
   end
 end
