@@ -1,3 +1,5 @@
+require 'ffi/upskirt/upskirt'
+
 module FFI
   module Upskirt
     class Renderer < FFI::Struct
@@ -28,6 +30,54 @@ module FFI
              :doc_header, :doc_header_callback,
              :doc_footerm, :doc_footer_callback,
              :opaque, :pointer
+
+      #
+      # Creates a new HTML renderer.
+      #
+      # @param [Integer] flags
+      #   Render flags for the new renderer.
+      #
+      # @yield [renderer]
+      #   The given block will be passed the new renderer.
+      #
+      # @yieldparam [Renderer] renderer
+      #   The new renderer.
+      #
+      # @return []
+      #   After the given block has returned, the renderer will be freed.
+      #
+      def Renderer.html(flags)
+        renderer = new
+        Upskirt.upshtml_renderer(renderer,flags)
+
+        yield renderer
+
+        Upskirt.upshtml_free_renderer(renderer)
+      end
+
+      #
+      # Creates a new Table of Contents (TOC) renderer.
+      #
+      # @param [Integer] flags
+      #   Render flags for the new renderer.
+      #
+      # @yield [renderer]
+      #   The given block will be passed the new renderer.
+      #
+      # @yieldparam [Renderer] renderer
+      #   The new renderer.
+      #
+      # @return []
+      #   After the given block has returned, the renderer will be freed.
+      #
+      def Renderer.toc
+        renderer = new
+        Upskirt.upshtml_toc_renderer(renderer)
+
+        yield renderer
+
+        Upskirt.upshtml_free_renderer(renderer)
+      end
 
     end
   end
