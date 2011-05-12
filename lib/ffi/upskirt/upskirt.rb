@@ -34,10 +34,25 @@ module FFI
 
     attach_function :is_safe_link, [:pointer, :size_t], :int
     attach_function :ups_markdown, [:pointer, :pointer, :pointer, :uint], :void
+    attach_function :ups_version, [:pointer, :pointer, :pointer], :void
 
     attach_function :upshtml_renderer, [:pointer, :uint], :void
     attach_function :upshtml_toc_renderer, [:pointer], :void
     attach_function :upshtml_free_renderer, [:pointer], :void
     attach_function :upshtml_smartypants, [:pointer, :pointer], :void
+
+    #
+    # Returns the version of the installed `libupskirt`.
+    #
+    # @return [String]
+    #   The version string.
+    #
+    def Upskirt.version
+      ints = FFI::MemoryPointer.new(:int,3)
+
+      ups_version(ints[0],ints[1],ints[2])
+
+      return ints.get_array_of_int(0,3).join('.')
+    end
   end
 end
