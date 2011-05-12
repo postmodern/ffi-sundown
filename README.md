@@ -68,6 +68,7 @@ Ruby FFI bindings for the libupskirt markdown library.
 ## Requirements
 
 * [libupskirt](https://github.com/tanoku/upskirt) >= 1.2.0
+* [ffi](http://github.com/ffi/ffi) ~> 1.0
 
 ## Install
 
