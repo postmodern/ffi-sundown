@@ -1,2 +1,2 @@
-require 'ffi/upskirt/upskirt'
+require 'ffi/upskirt/document'
 require 'ffi/upskirt/version'
