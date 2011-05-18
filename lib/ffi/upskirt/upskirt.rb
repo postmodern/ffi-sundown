@@ -10,15 +10,15 @@ module FFI
 
     attach_function :bufcasecmp, [:pointer, :pointer], :int
     attach_function :bufcmp, [:pointer, :pointer], :int
-    attach_function :bufcmps, [:pointer, :pointer], :int
-    attach_function :bufprefix, [:pointer, :pointer], :int
+    attach_function :bufcmps, [:pointer, :string], :int
+    attach_function :bufprefix, [:pointer, :string], :int
     attach_function :bufdup, [:pointer, :size_t], :pointer
     attach_function :bufgrow, [:pointer, :size_t], :int
     attach_function :bufnew, [:size_t], :pointer
     attach_function :bufnullterm, [:pointer], :void
-    attach_function :bufprintf, [:pointer, :pointer, :varargs], :void
-    attach_function :bufput, [:pointer, :pointer, :size_t], :void
-    attach_function :bufputs, [:pointer, :pointer], :void
+    attach_function :bufprintf, [:pointer, :string, :varargs], :void
+    attach_function :bufput, [:pointer, :buffer_in, :size_t], :void
+    attach_function :bufputs, [:pointer, :string], :void
     attach_function :bufputc, [:pointer, :char], :void
     attach_function :bufrelease, [:pointer], :void
     attach_function :bufreset, [:pointer], :void
