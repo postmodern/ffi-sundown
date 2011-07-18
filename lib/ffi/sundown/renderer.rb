@@ -1,7 +1,7 @@
-require 'ffi/upskirt/upskirt'
+require 'ffi/sundown/sundown'
 
 module FFI
-  module Upskirt
+  module Sundown
     class Renderer < FFI::Struct
 
       layout :blockcode, :blockcode_callback,
@@ -48,11 +48,11 @@ module FFI
       #
       def Renderer.html(flags)
         renderer = new
-        Upskirt.upshtml_renderer(renderer,flags)
+        Sundown.upshtml_renderer(renderer,flags)
 
         yield renderer
 
-        Upskirt.upshtml_free_renderer(renderer)
+        Sundown.upshtml_free_renderer(renderer)
       end
 
       #
@@ -72,11 +72,11 @@ module FFI
       #
       def Renderer.toc
         renderer = new
-        Upskirt.upshtml_toc_renderer(renderer)
+        Sundown.upshtml_toc_renderer(renderer)
 
         yield renderer
 
-        Upskirt.upshtml_free_renderer(renderer)
+        Sudown.upshtml_free_renderer(renderer)
       end
 
     end

@@ -1,16 +1,16 @@
-require 'ffi/upskirt/types'
-require 'ffi/upskirt/buffer'
-require 'ffi/upskirt/renderer'
+require 'ffi/sundown/types'
+require 'ffi/sundown/buffer'
+require 'ffi/sundown/renderer'
 
 module FFI
-  module Upskirt
+  module Sundown
     class Document
 
       # The `render_mode` enum
-      RENDER_MODES = Upskirt.enum_type(:render_mode)
+      RENDER_MODES = Sundown.enum_type(:render_mode)
 
       # The `markdown_extensions` enum
-      EXTENSIONS = Upskirt.enum_type(:markdown_extensions)
+      EXTENSIONS = Sundown.enum_type(:markdown_extensions)
 
       # Valid options for {#initialize}
       VALID_OPTIONS = RENDER_MODES.symbols + EXTENSIONS.symbols
@@ -158,7 +158,7 @@ module FFI
           Buffer.create_empty(128) do |output_buffer|
             output_buffer.grow(@source.length * 1.2)
 
-            Upskirt.ups_markdown(output_buffer,input_buffer,renderer,extensions)
+            Sundown.ups_markdown(output_buffer,input_buffer,renderer,extensions)
 
             result = if @smart
                        output_buffer.to_smartypants

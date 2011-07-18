@@ -1,7 +1,7 @@
 require 'ffi'
 
 module FFI
-  module Upskirt
+  module Sundown
     extend FFI::Library
 
     enum :markdown_autolink, [

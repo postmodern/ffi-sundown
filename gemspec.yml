@@ -1,15 +1,15 @@
-name: ffi-upskirt
-summary: FFI bindings for libupskirt
+name: ffi-sundown
+summary: FFI bindings for libsundown
 description:
-  Ruby FFI bindings for the libupskirt markdown library.
+  Ruby FFI bindings for the libsundown markdown library.
 
 license: MIT
 authors: Postmodern
 email: postmodern.mod3@gmail.com
-homepage: http://github.com/postmodern/ffi-upskirt
+homepage: http://github.com/postmodern/ffi-sundown
 has_yard: true
 
-requirements: "libupskirt >= 1.2.0"
+requirements: "libsundown >= 1.2.0"
 
 dependencies:
   ffi: ~> 1.0

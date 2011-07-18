@@ -1,12 +1,12 @@
-require 'ffi/upskirt/types'
+require 'ffi/sundown/types'
 
 require 'ffi'
 
 module FFI
-  module Upskirt
+  module Sundown
     extend FFI::Library
 
-    ffi_lib 'upskirt'
+    ffi_lib 'sundown'
 
     attach_function :bufcasecmp, [:pointer, :pointer], :int
     attach_function :bufcmp, [:pointer, :pointer], :int
@@ -42,12 +42,12 @@ module FFI
     attach_function :upshtml_smartypants, [:pointer, :pointer], :void
 
     #
-    # Returns the version of the installed `libupskirt`.
+    # Returns the version of the installed `libsundown`.
     #
     # @return [String]
     #   The version string.
     #
-    def Upskirt.version
+    def Sundown.version
       ints = FFI::MemoryPointer.new(:int,3)
 
       ups_version(ints[0],ints[1],ints[2])

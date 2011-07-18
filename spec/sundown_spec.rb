@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'ffi/upskirt'
+require 'ffi/sundown'
 
-describe FFI::Upskirt do
+describe FFI::Sundown do
   it "should have a VERSION constant" do
     subject.const_get('VERSION').should_not be_empty
   end

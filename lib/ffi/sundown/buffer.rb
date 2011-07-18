@@ -1,7 +1,7 @@
-require 'ffi/upskirt/upskirt'
+require 'ffi/sundown/sundown'
 
 module FFI
-  module Upskirt
+  module Sundown
     class Buffer < FFI::Struct
 
       layout :data, :pointer,
@@ -26,11 +26,11 @@ module FFI
       #   Once the block has returned, the buffer will be released.
       #
       def self.create_empty(size)
-        buffer = new(Upskirt.bufnew(size))
+        buffer = new(Sundown.bufnew(size))
 
         yield buffer
 
-        Upskirt.bufrelease(buffer)
+        Sundown.bufrelease(buffer)
       end
 
       #
@@ -68,7 +68,7 @@ module FFI
       #   The length to increase the buffer by.
       #
       def grow(length)
-        Upskirt.bufgrow(self,length)
+        Sundown.bufgrow(self,length)
       end
 
       #
@@ -91,7 +91,7 @@ module FFI
         result = nil
 
         Buffer.create_empty(128) do |smart_buffer|
-          Upskirt.upshtml_smartypants(smart_buffer,self)
+          Sundown.upshtml_smartypants(smart_buffer,self)
 
           result = self.to_s
         end

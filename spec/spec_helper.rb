@@ -1,5 +1,5 @@
 gem 'rspec', '~> 2.4'
 require 'rspec'
-require 'ffi/upskirt/version'
+require 'ffi/sundown/version'
 
-include FFI::Upskirt
+include FFI::Sundown
