@@ -67,8 +67,8 @@ Ruby FFI bindings for the libsundown markdown library.
 
 ## Requirements
 
-* [libsundown](https://github.com/tanoku/sundown) >= 1.2.0
-* [ffi](http://github.com/ffi/ffi) ~> 1.0
+* [libsundown] >= 1.2.0
+* [ffi] ~> 1.0
 
 ## Install
 
@@ -79,3 +79,6 @@ Ruby FFI bindings for the libsundown markdown library.
 Copyright (c) 2011 Hal Brodigan
 
 See {file:LICENSE.txt} for details.
+
+[libsundown]: https://github.com/vmg/sundown#readme
+[ffi]: https://github.com/ffi/ffi#readme
